@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.categories;
+package com.dmiazga.budgetapp.categories;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

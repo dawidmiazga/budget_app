@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.basic.auth;
+package com.dmiazga.budgetapp.basic.auth;
 
 public class AuthenticationBean {
 

@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.userslist;
+package com.dmiazga.budgetapp.userslist;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.basic.auth;
+package com.dmiazga.budgetapp.basic.auth;
  
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

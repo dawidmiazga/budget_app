@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.budget;
+package com.dmiazga.budgetapp.budget;
 
 import java.util.Date;
 

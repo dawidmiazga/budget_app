@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.expense;
+package com.dmiazga.budgetapp.expense;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

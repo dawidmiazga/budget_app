@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.income;
+package com.dmiazga.budgetapp.income;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

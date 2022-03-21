@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.categories;
+package com.dmiazga.budgetapp.categories;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

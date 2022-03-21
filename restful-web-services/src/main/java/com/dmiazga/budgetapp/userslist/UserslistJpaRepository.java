@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.userslist;
+package com.dmiazga.budgetapp.userslist;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

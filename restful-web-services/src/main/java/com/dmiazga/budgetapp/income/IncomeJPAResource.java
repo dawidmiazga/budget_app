@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.income;
+package com.dmiazga.budgetapp.income;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.dmiazga.rest.webservices.restfulwebservices.income.Income;
+import com.dmiazga.budgetapp.income.Income;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController

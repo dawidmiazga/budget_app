@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.categories;
+package com.dmiazga.budgetapp.categories;
 
 import java.net.URI;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.income;
+package com.dmiazga.budgetapp.expense;
 
 import java.util.Date;
 import javax.persistence.Entity;
@@ -6,48 +6,50 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Income {
+public class Expense {
 	@Id
 	@GeneratedValue
-	private Long incomeid;
+	private Long expenseid;
 	private String username;
 	private String description;
 	private Date targetDate;
 	private Date finishDate;
-	private Double amount;
+	private Double price;
+	private String categoryname;
 	private String comment;
 	private String cycle;
 
-	public Income() {
+	public Expense() {
 	}
 
-	public Income(
-			long incomeid, 
+	public Expense(
+			long expenseid, 
 			String username, 
 			String description, 
 			Date targetDate, 
 			Date finishDate, 
-			double amount, 
+			double price, 
+			String categoryname,
 			String comment, 
 			String cycle) {
-
 		super();
-		this.incomeid = incomeid;
+		this.expenseid = expenseid;
 		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
 		this.finishDate = finishDate;
-		this.amount = amount;
+		this.price = price;
+		this.categoryname = categoryname;
 		this.comment = comment;
 		this.cycle = cycle;
 	}
 
 	public Long getId() {
-		return incomeid;
+		return expenseid;
 	}
 
-	public void setId(Long incomeid) {
-		this.incomeid = incomeid;
+	public void setId(Long expenseid) {
+		this.expenseid = expenseid;
 	}
 
 	public String getUsername() {
@@ -80,12 +82,20 @@ public class Income {
 	public void setFinishDate(Date finishDate) {
 		this.finishDate = finishDate;
 	}
-	public Double getAmount() {
-		return amount;
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getCategory() {
+		return categoryname;
+	}
+
+	public void setCategory(String categoryname) {
+		this.categoryname = categoryname;
 	}
 
 	public String getComment() {
@@ -95,6 +105,7 @@ public class Income {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
 	public String getCycle() {
 		return cycle;
 	}
@@ -107,7 +118,7 @@ public class Income {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (incomeid ^ (incomeid >>> 32));
+		result = prime * result + (int) (expenseid ^ (expenseid >>> 32));
 		return result;
 	}
 
@@ -119,8 +130,8 @@ public class Income {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Income other = (Income) obj;
-		if (incomeid != other.incomeid)
+		Expense other = (Expense) obj;
+		if (expenseid != other.expenseid)
 			return false;
 		return true;
 	}

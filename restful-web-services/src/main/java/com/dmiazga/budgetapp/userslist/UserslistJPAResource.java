@@ -1,4 +1,4 @@
-package com.dmiazga.rest.webservices.restfulwebservices.userslist;
+package com.dmiazga.budgetapp.userslist;
 
 import java.net.URI;
 import java.util.List;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.dmiazga.rest.webservices.restfulwebservices.userslist.Userslist;
+import com.dmiazga.budgetapp.userslist.Userslist;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
