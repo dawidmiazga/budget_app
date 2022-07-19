@@ -15,49 +15,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class BudgetJPAResource {
 
 	@Autowired
 	private BudgetJpaRepository budgetJpaRepository;
-		
-	@GetMapping("/jpa/users/{username}/budgets")
-	public List<Budget> getAllBudgets(@PathVariable String username){
-		return budgetJpaRepository.findByUsername(username);
+
+	@GetMapping("/jpa/users/{usernameid}/budgets")
+	public List<Budget> getAllBudgets(@PathVariable long usernameid) {
+		return budgetJpaRepository.findAllByUsernameid(usernameid);
 	}
 
-	@GetMapping("/jpa/users/{username}/budgets/{id}")
-	public Budget getBudget(@PathVariable String username, @PathVariable long id){
-		return budgetJpaRepository.findById(id).get();
+	@GetMapping("/jpa/users/{usernameid}/budgets/{budgetid}")
+	public Budget getBudget(@PathVariable long usernameid, @PathVariable long budgetid) {
+		return budgetJpaRepository.findById(budgetid).get();
 	}
 
-	@DeleteMapping("/jpa/users/{username}/budgets/{id}")
-	public ResponseEntity<Void> deleteBudget(
-			@PathVariable String username, @PathVariable long id){
-		
-		budgetJpaRepository.deleteById(id);
+	@DeleteMapping("/jpa/users/{usernameid}/budgets/{budgetid}")
+	public ResponseEntity<Void> deleteBudget(@PathVariable long usernameid, @PathVariable long budgetid) {
+		budgetJpaRepository.deleteById(budgetid);
 		return ResponseEntity.noContent().build();
 	}
-	
-	@PutMapping("/jpa/users/{username}/budgets/{id}")
-	public ResponseEntity<Budget> updateBudget(
-			@PathVariable String username,
-			@PathVariable long id, @RequestBody Budget budget){
-		
+
+	@PutMapping("/jpa/users/{usernameid}/budgets/{budgetid}")
+	public ResponseEntity<Budget> updateBudget(@PathVariable long usernameid, @PathVariable long budgetid,
+			@RequestBody Budget budget) {
 		Budget budgetUpdated = budgetJpaRepository.save(budget);
 		return new ResponseEntity<Budget>(budget, HttpStatus.OK);
 	}
-	
-	@PostMapping("/jpa/users/{username}/budgets")
-	public ResponseEntity<Void> createBudget(
-			@PathVariable String username, @RequestBody Budget budget){
-		Budget createdBudget = budgetJpaRepository.save(budget);
 
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(createdBudget.getId()).toUri();
-		
+	@PostMapping("/jpa/users/{usernameid}/budgets")
+	public ResponseEntity<Void> createBudget(@PathVariable long usernameid, @RequestBody Budget budget) {
+		Budget createdBudget = budgetJpaRepository.save(budget);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+				.buildAndExpand(createdBudget.getBudgetid()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
-		
+
 }

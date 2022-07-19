@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryJpaRepository extends JpaRepository<Category, Long> {
-	List<Category> findByUsername(String username);
+	List<Category> findAllByUsernameid(long usernameid);
+	Long deleteByCategoryname(String categoryname);
 }

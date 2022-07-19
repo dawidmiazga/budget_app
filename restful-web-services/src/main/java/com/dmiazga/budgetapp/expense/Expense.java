@@ -10,12 +10,12 @@ public class Expense {
 	@Id
 	@GeneratedValue
 	private Long expenseid;
-	private String username;
+	private Long usernameid;
 	private String description;
-	private Date targetDate;
-	private Date finishDate;
+	private Date target_date;
+	private Date finish_date;
 	private Double price;
-	private String categoryname;
+	private Long categoryid;
 	private String comment;
 	private String cycle;
 
@@ -24,40 +24,40 @@ public class Expense {
 
 	public Expense(
 			long expenseid, 
-			String username, 
+			long usernameid, 
 			String description, 
-			Date targetDate, 
-			Date finishDate, 
+			Date target_date, 
+			Date finish_date, 
 			double price, 
-			String categoryname,
+			long categoryid,
 			String comment, 
 			String cycle) {
 		super();
 		this.expenseid = expenseid;
-		this.username = username;
+		this.usernameid = usernameid;
 		this.description = description;
-		this.targetDate = targetDate;
-		this.finishDate = finishDate;
+		this.target_date = target_date;
+		this.finish_date = finish_date;
 		this.price = price;
-		this.categoryname = categoryname;
+		this.categoryid = categoryid;
 		this.comment = comment;
 		this.cycle = cycle;
 	}
 
-	public Long getId() {
+	public Long getExpenseid() {
 		return expenseid;
 	}
 
-	public void setId(Long expenseid) {
+	public void setExpenseid(Long expenseid) {
 		this.expenseid = expenseid;
 	}
 
-	public String getUsername() {
-		return username;
+	public Long getUsernameid() {
+		return usernameid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsernameid(Long usernameid) {
+		this.usernameid = usernameid;
 	}
 
 	public String getDescription() {
@@ -68,19 +68,19 @@ public class Expense {
 		this.description = description;
 	}
 
-	public Date getTargetDate() {
-		return targetDate;
+	public Date getTarget_date() {
+		return target_date;
 	}
 
-	public void setTargetDate(Date targetDate) {
-		this.targetDate = targetDate;
+	public void setTarget_date(Date target_date) {
+		this.target_date = target_date;
 	}
-	public Date getFinishDate() {
-		return finishDate;
+	public Date getFinish_date() {
+		return finish_date;
 	}
 
-	public void setFinishDate(Date finishDate) {
-		this.finishDate = finishDate;
+	public void setFinish_date(Date finish_date) {
+		this.finish_date = finish_date;
 	}
 	public Double getPrice() {
 		return price;
@@ -90,12 +90,12 @@ public class Expense {
 		this.price = price;
 	}
 
-	public String getCategory() {
-		return categoryname;
+	public Long getCategoryid() {
+		return categoryid;
 	}
 
-	public void setCategory(String categoryname) {
-		this.categoryname = categoryname;
+	public void setCategoryid(Long categoryid) {
+		this.categoryid = categoryid;
 	}
 
 	public String getComment() {
@@ -114,6 +114,22 @@ public class Expense {
 		this.cycle = cycle;
 	}
 
+	public Long getId() {
+		return expenseid;
+	}
+
+	public void setId(Long expenseid) {
+		this.expenseid = expenseid;
+	}
+	
+	public Long getCategory() {
+		return categoryid;
+	}
+
+	public void setCategory(Long categoryid) {
+		this.categoryid = categoryid;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

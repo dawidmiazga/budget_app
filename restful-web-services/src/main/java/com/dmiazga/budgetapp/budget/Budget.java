@@ -1,7 +1,6 @@
 package com.dmiazga.budgetapp.budget;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,8 +10,8 @@ public class Budget {
 	@Id
 	@GeneratedValue
 	private Long budgetid;
-	private String username;
-	private Date targetMonth;
+	private Long usernameid;
+	private Date target_month;
 	private Double amount;
 	private String comment;
 	
@@ -21,40 +20,40 @@ public class Budget {
 
 	public Budget(
 			long budgetid, 
-			String username, 
-			Date targetMonth, 
+			long usernameid, 
+			Date target_month, 
 			double amount,
 			String comment) {
 		super();
 		this.budgetid = budgetid;
-		this.username = username;
-		this.targetMonth = targetMonth;
+		this.usernameid = usernameid;
+		this.target_month = target_month;
 		this.amount = amount;
 		this.comment = comment;
 	}
 
-	public Long getId() {
+	public Long getBudgetid() {
 		return budgetid;
 	}
 
-	public void setId(Long budgetid) {
+	public void setBudgetid(Long budgetid) {
 		this.budgetid = budgetid;
 	}
 
-	public String getUsername() {
-		return username;
+	public Long getUsernameid() {
+		return usernameid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsernameid(Long usernameid) {
+		this.usernameid = usernameid;
 	}
 
-	public Date getTargetMonth() {
-		return targetMonth;
-	}
+	public Date getTarget_month() {
+		return target_month;
+	} 
 	
-	public void setTargetMonth(Date targetMonth) {
-		this.targetMonth = targetMonth;
+	public void setTarget_month(Date target_month) {
+		this.target_month = target_month;
 	}
 	
 	public Double getAmount() {
@@ -71,6 +70,14 @@ public class Budget {
 	
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public Long getId() {
+		return budgetid;
+	}
+
+	public void setId(Long budgetid) {
+		this.budgetid = budgetid;
 	}
 	
 	@Override

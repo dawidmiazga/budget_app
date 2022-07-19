@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExpenseJpaRepository extends JpaRepository<Expense, Long> {
-	List<Expense> findByUsername(String username);
+	List<Expense> findAllByUsernameid(long usernameid);
 }

@@ -9,49 +9,50 @@ public class Category {
 	@Id
 	@GeneratedValue
 	private Long categoryid;
-	private String username;
 	private String categoryname;
+	private Long usernameid;
 	private String comment;
 	private String hexcolor;
 	
 	public Category() {
 	}
 
-		public Category(long categoryid, 
-				String username, 
+		public Category(
+				long categoryid, 
 				String categoryname,
+				long usernameid, 
 				String comment,
 				String hexcolor) {
 		super();
 		this.categoryid = categoryid;
-		this.username = username;
 		this.categoryname = categoryname;
+		this.usernameid = usernameid;
 		this.categoryname = comment;
 		this.hexcolor = hexcolor;
 	}
 
-	public Long getId() {
-		return categoryid;
-	}
+	public Long getCategoryid() {
+			return categoryid;
+		}
 
-	public void setId(Long categoryid) {
+	public void setCategoryid(Long categoryid) {
 		this.categoryid = categoryid;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getCategoryname() {
 		return categoryname;
 	}
-
+	
 	public void setCategoryname(String categoryname) {
 		this.categoryname = categoryname;
+	}
+
+	public Long getUsernameid() {
+			return usernameid;
+		}
+
+	public void setUsernameid(Long usernameid) {
+		this.usernameid = usernameid;
 	}
 
 	public String getComment() {
@@ -70,6 +71,14 @@ public class Category {
 		this.hexcolor = hexcolor;
 	}
 	
+	public Long getId() {
+		return categoryid;
+	}
+	
+	public void setId(Long categoryid) {
+		this.categoryid = categoryid;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -10,10 +10,10 @@ public class Income {
 	@Id
 	@GeneratedValue
 	private Long incomeid;
-	private String username;
+	private Long usernameid;
 	private String description;
-	private Date targetDate;
-	private Date finishDate;
+	private Date target_date;
+	private Date finish_date;
 	private Double amount;
 	private String comment;
 	private String cycle;
@@ -23,39 +23,39 @@ public class Income {
 
 	public Income(
 			long incomeid, 
-			String username, 
+			long usernameid, 
 			String description, 
-			Date targetDate, 
-			Date finishDate, 
+			Date target_date, 
+			Date finish_date, 
 			double amount, 
 			String comment, 
 			String cycle) {
 
 		super();
 		this.incomeid = incomeid;
-		this.username = username;
+		this.usernameid = usernameid;
 		this.description = description;
-		this.targetDate = targetDate;
-		this.finishDate = finishDate;
+		this.target_date = target_date;
+		this.finish_date = finish_date;
 		this.amount = amount;
 		this.comment = comment;
 		this.cycle = cycle;
 	}
 
-	public Long getId() {
+	public Long getIncomeid() {
 		return incomeid;
 	}
 
-	public void setId(Long incomeid) {
+	public void setIncomeid(Long incomeid) {
 		this.incomeid = incomeid;
 	}
 
-	public String getUsername() {
-		return username;
+	public Long getUsernameid() {
+		return usernameid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsernameid(Long usernameid) {
+		this.usernameid = usernameid;
 	}
 
 	public String getDescription() {
@@ -66,19 +66,19 @@ public class Income {
 		this.description = description;
 	}
 
-	public Date getTargetDate() {
-		return targetDate;
+	public Date getTarget_date() {
+		return target_date;
 	}
 
-	public void setTargetDate(Date targetDate) {
-		this.targetDate = targetDate;
+	public void setTarget_date(Date target_date) {
+		this.target_date = target_date;
 	}
-	public Date getFinishDate() {
-		return finishDate;
+	public Date getFinish_date() {
+		return finish_date;
 	}
 
-	public void setFinishDate(Date finishDate) {
-		this.finishDate = finishDate;
+	public void setFinish_date(Date finish_date) {
+		this.finish_date = finish_date;
 	}
 	public Double getAmount() {
 		return amount;
@@ -101,6 +101,14 @@ public class Income {
 
 	public void setCycle(String cycle) {
 		this.cycle = cycle;
+	}
+
+	public Long getId() {
+		return incomeid;
+	}
+
+	public void setId(Long incomeid) {
+		this.incomeid = incomeid;
 	}
 
 	@Override

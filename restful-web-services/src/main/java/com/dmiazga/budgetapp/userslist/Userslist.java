@@ -11,6 +11,7 @@ public class Userslist {
 	private Long usernameid;
 	private String username;
 	private String password;
+	private String useremail;
 
 	public Userslist() {
 	}
@@ -18,12 +19,38 @@ public class Userslist {
 	public Userslist(
 			long usernameid, 
 			String username, 
-			String password) {
+			String password, 
+			String useremail) {
 
 		super();
 		this.usernameid = usernameid;
 		this.username = username;
 		this.password = password;
+		this.useremail = useremail;
+	}
+
+	public String getUseremail() {
+		return useremail;
+	}
+
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
+	}
+
+	public Long getUsernameid() {
+		return usernameid;
+	}
+
+	public void setUsernameid(Long usernameid) {
+		this.usernameid = usernameid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getLogin() {
@@ -34,14 +61,6 @@ public class Userslist {
 		this.username = username;
 	}
 
-	public Long getId() {
-		return usernameid;
-	}
-
-	public void setId(Long usernameid) {
-		this.usernameid = usernameid;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -50,6 +69,14 @@ public class Userslist {
 		this.password = password;
 	}
 
+	public Long getId() {
+		return usernameid;
+	}
+
+	public void setId(Long usernameid) {
+		this.usernameid = usernameid;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

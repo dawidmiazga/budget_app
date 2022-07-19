@@ -19,54 +19,42 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.dmiazga.budgetapp.income.Income;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class IncomeJPAResource {
 
 	@Autowired
 	private IncomeJpaRepository incomeJpaRepository;
 
-	
-	@GetMapping("/jpa/users/{username}/incomes")
-	public List<Income> getAllIncomes(@PathVariable String username){
-		return incomeJpaRepository.findByUsername(username);
+	@GetMapping("/jpa/users/{usernameid}/incomes")
+	public List<Income> getAllIncomes(@PathVariable long usernameid) {
+		return incomeJpaRepository.findAllByUsernameid(usernameid);
 	}
 
-	@GetMapping("/jpa/users/{username}/incomes/{id}")
-	public Income getIncome(@PathVariable String username, @PathVariable long id){
+	@GetMapping("/jpa/users/{usernameid}/incomes/{id}")
+	public Income getIncome(@PathVariable long usernameid, @PathVariable long id) {
 		return incomeJpaRepository.findById(id).get();
 	}
 
-	@DeleteMapping("/jpa/users/{username}/incomes/{id}")
-	public ResponseEntity<Void> deleteIncome(
-			@PathVariable String username, @PathVariable long id){
-		
+	@DeleteMapping("/jpa/users/{usernameid}/incomes/{id}")
+	public ResponseEntity<Void> deleteIncome(@PathVariable long usernameid, @PathVariable long id) {
 		incomeJpaRepository.deleteById(id);
-		
 		return ResponseEntity.noContent().build();
 	}
 
-	@PutMapping("/jpa/users/{username}/incomes/{id}")
-	public ResponseEntity<Income> updateIncome(
-			@PathVariable String username,
-			@PathVariable long id, @RequestBody Income income){
-		
+	@PutMapping("/jpa/users/{usernameid}/incomes/{id}")
+	public ResponseEntity<Income> updateIncome(@PathVariable long usernameid, @PathVariable long id,
+			@RequestBody Income income) {
 		Income incomeUpdated = incomeJpaRepository.save(income);
-		
 		return new ResponseEntity<Income>(income, HttpStatus.OK);
 	}
-	
-	@PostMapping("/jpa/users/{username}/incomes")
-	public ResponseEntity<Void> createIncome(
-			@PathVariable String username, @RequestBody Income income){
-		
-		income.setUsername(username);
-		Income createdIncome = incomeJpaRepository.save(income);
 
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(createdIncome.getId()).toUri();
-		
+	@PostMapping("/jpa/users/{usernameid}/incomes")
+	public ResponseEntity<Void> createIncome(@PathVariable long usernameid, @RequestBody Income income) {
+		Income createdIncome = incomeJpaRepository.save(income);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdIncome.getIncomeid())
+				.toUri();
 		return ResponseEntity.created(uri).build();
 	}
-		
+
 }
