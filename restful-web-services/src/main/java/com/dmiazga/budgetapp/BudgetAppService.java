@@ -10,6 +10,6 @@ public class BudgetAppService {
 	@Autowired
 	public static void main(String[] args) {
 		SpringApplication.run(BudgetAppService.class, args);
-			System.out.println("Works");
-		}
+		System.out.println("Works");
+	}
 }
