@@ -63,7 +63,7 @@ public class UserslistJPAResource {
 //			System.err.println(e.getMessage());
 //		}
 //		return userslistJpaRepository.findById(usernameid).get();
-//	}
+//	} grammar rules, idioms, improving fluency
 
 	@DeleteMapping("/jpa/users/userslist/{usernameid}")
 	public ResponseEntity<Void> deleteUserslist(@PathVariable long usernameid) {

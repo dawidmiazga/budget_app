@@ -233,3 +233,18 @@ INSERT INTO EXPENSE (expenseid, usernameid, description, target_date,finish_date
 (10133,10002,'Sklep','2022-01-10','2022-01-10',5.59,10002,'','Nie'),
 (10134,10002,'Sklep','2022-01-14','2022-01-14',28.11,10002,'','Nie')
 ;
+
+DROP TABLE IF EXISTS BANKACCOUNT;
+CREATE TABLE BANKACCOUNT (
+  bankaccountname 	VARCHAR(250) 		DEFAULT NULL,
+  bankaccountid 	INT   				PRIMARY KEY,
+  usernameid 		INT 				DEFAULT NULL, foreign key (usernameid) references USERSLIST(usernameid),
+  comment 			VARCHAR(250) 		DEFAULT NULL,
+  percentage 			VARCHAR(250) 		DEFAULT NULL
+);
+
+INSERT INTO BANKACCOUNT (bankaccountid, usernameid, bankaccountname,comment,percentage) VALUES
+  (10001,10002,'ING','',1),
+  (10002,10002,'Revolut','',2),
+  (10003,10002,'PKO','',0)
+  ;

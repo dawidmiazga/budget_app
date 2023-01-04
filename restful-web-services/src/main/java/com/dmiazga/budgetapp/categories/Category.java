@@ -27,7 +27,7 @@ public class Category {
 		this.categoryid = categoryid;
 		this.categoryname = categoryname;
 		this.usernameid = usernameid;
-		this.categoryname = comment;
+		this.comment = comment;
 		this.hexcolor = hexcolor;
 	}
 

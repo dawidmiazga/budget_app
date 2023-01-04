@@ -18,20 +18,13 @@ public class Expense {
 	private Long categoryid;
 	private String comment;
 	private String cycle;
+	private String bankaccountname;
 
 	public Expense() {
 	}
 
-	public Expense(
-			long expenseid, 
-			long usernameid, 
-			String description, 
-			Date target_date, 
-			Date finish_date, 
-			double price, 
-			long categoryid,
-			String comment, 
-			String cycle) {
+	public Expense(long expenseid, long usernameid, String description, Date target_date, Date finish_date,
+			double price, long categoryid, String comment, String cycle, String bankaccountname) {
 		super();
 		this.expenseid = expenseid;
 		this.usernameid = usernameid;
@@ -42,6 +35,7 @@ public class Expense {
 		this.categoryid = categoryid;
 		this.comment = comment;
 		this.cycle = cycle;
+		this.bankaccountname = bankaccountname;
 	}
 
 	public Long getExpenseid() {
@@ -75,6 +69,7 @@ public class Expense {
 	public void setTarget_date(Date target_date) {
 		this.target_date = target_date;
 	}
+
 	public Date getFinish_date() {
 		return finish_date;
 	}
@@ -82,6 +77,7 @@ public class Expense {
 	public void setFinish_date(Date finish_date) {
 		this.finish_date = finish_date;
 	}
+
 	public Double getPrice() {
 		return price;
 	}
@@ -121,7 +117,7 @@ public class Expense {
 	public void setId(Long expenseid) {
 		this.expenseid = expenseid;
 	}
-	
+
 	public Long getCategory() {
 		return categoryid;
 	}
@@ -129,7 +125,7 @@ public class Expense {
 	public void setCategory(Long categoryid) {
 		this.categoryid = categoryid;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -150,5 +146,13 @@ public class Expense {
 		if (expenseid != other.expenseid)
 			return false;
 		return true;
+	}
+
+	public String getBankaccountname() {
+		return bankaccountname;
+	}
+
+	public void setBankaccountname(String bankaccountname) {
+		this.bankaccountname = bankaccountname;
 	}
 }
